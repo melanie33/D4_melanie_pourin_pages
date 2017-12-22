@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="fr">
+<title>M L P Design</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<link href="https://fonts.googleapis.com/css?family=Playfair+Display" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+<style>
+h1,h2,h3,h4 {font-family: 'Playfair Display', serif}
+.w3-quarter img{margin-bottom: -6px; cursor: pointer}
+.w3-quarter img:hover{opacity: 0.6; transition: 0.3s}
+</style>
+<body class="w3-light-grey">
+
+  <!-- Sidebar/menu -->
+  <nav class="w3-sidebar w3-bar-block w3-black w3-animate-right w3-top w3-text-light-grey w3-large" style="z-index:3;width:250px;font-weight:bold;display:none;right:0;" id="mySidebar">
+    <a href="javascript:void()" onclick="w3_close()" class="w3-bar-item w3-button w3-center w3-padding-32">HOME</a>
+    <a href="#" onclick="w3_close()" class="w3-bar-item w3-button w3-center w3-padding-16">CATEGORIES</a>
+    <a href="#about" onclick="w3_close()" class="w3-bar-item w3-button w3-center w3-padding-16">ABOUT ME</a>
+    <a href="#contact" onclick="w3_close()" class="w3-bar-item w3-button w3-center w3-padding-16">CONTACT</a>
+  </nav>
+
+  <!-- Top menu on small screens -->
+  <header class="w3-container w3-top w3-white w3-xlarge w3-padding-16">
+    <span class="w3-left w3-padding">M L P</span>
+    <a href="javascript:void(0)" class="w3-right w3-button w3-white" onclick="w3_open()">☰</a>
+  </header>
+
+  <!-- Overlay effect when opening sidebar on small screens -->
+  <div class="w3-overlay w3-animate-opacity" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
+
+<!-- !PAGE CONTENT! -->
+<div class="w3-main w3-content" style="max-width:1600px;margin-top:83px">
+
+  <div class="w3-container w3-dark-grey w3-center w3-text-light-grey w3-padding-32" id="about">
+    <h1><b>Mélanie Pourin</b></h1>
+    <div class="w3-content w3-justify" style="max-width:600px">
+      <h5> Je suis actuellement en école de communication graphique à Bordeaux.<br> Je viens de commencer un Master
+        Design Interactif. Intéressée par le web design, l'illustration et l'édition, je continue mon apprentissage à l'ECV.
+      </h5>
+      <p>Mail: melanie.pourin@gmail.com</p>
+      <p>Tel: 06 28 50 43 72
+
+
+  <!-- Modal for full size images on click-->
+  <div id="modal01" class="w3-modal w3-black" style="padding-top:0" onclick="this.style.display='none'">
+    <span class="w3-button w3-black w3-xlarge w3-display-topright">×</span>
+    <div class="w3-modal-content w3-animate-zoom w3-center w3-transparent w3-padding-64">
+      <img id="img01" class="w3-image">
+      <p id="caption"></p>
+    </div>
+  </div>
+
+  <script>
+  // Script to open and close sidebar
+  function w3_open() {
+      document.getElementById("mySidebar").style.display = "block";
+      document.getElementById("myOverlay").style.display = "block";
+  }
+
+  function w3_close() {
+      document.getElementById("mySidebar").style.display = "none";
+      document.getElementById("myOverlay").style.display = "none";
+  }
+
+  </script>
+
+
+<div id="footer">
+<a href="https://www.instagram.com/mela_mlp/" onclick="ga('send', 'event', 'bottom_instagram', 'click')" target="_blank">Instagram</a> |
+</div>
+
+<div id="bank" style="display:none"><div class="star"></div></div>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-37341238-4', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+<script>
+
+$(window).on("scroll", function() {
+    var fromTop = $("body").scrollTop();
+    $('#sticky').toggleClass("scrolled", (fromTop > 20));
+});
+
+
+$(document).ready(function(){
+    $('a').attr('target', '_blank');
+    $('#header a').attr('target', '');
+});
+
+$('input').focus(function(){
+   $(this).data('placeholder',$(this).attr('placeholder'))
+          .attr('placeholder','');
+}).blur(function(){
+   $(this).attr('placeholder',$(this).data('placeholder'));
+});
+
+$('#join').click(function() {
+    var input = document.getElementById('email');
+    if ( input.value.length != 0 ) {
+        $('#join').hide(); $('#error').hide(); $('#loader').show();
+        var email = $('input').val();
+        $.ajax({ type: 'POST', url: 'action.php', dataType: "html", data: { action: 'subscribe', email: email },
+            success: function(data) {
+                if ( data == "success" ) { setTimeout(success, 500); }
+                if ( data == "already" ) { setTimeout(already, 500); }
+                if ( data == "toomuch" ) { setTimeout(toomuch, 500); }
+                if ( data == "notvalid" ) { setTimeout(notvalid, 500); }
+                report();
+            }
+        });
+    }
+});
+
+function success() {
+    $('#loader').hide();
+    $('.form').addClass('success');
+    $('input').prop( "disabled", true );
+    $('.thanks').show();
+    ga('send', 'event', 'subscribe', 'success');
+}
+
+function already() {
+    $('#loader').hide();
+    $('#join').show();
+    $('#error').show();
+    $('#error').text('Oops! Seems like this email address is already on my list...')
+}
+
+function toomuch() {
+    $('#loader').hide();
+    $('#error').show();
+    $('#error').text('Ouch! Too many requests. Please try again tomorrow.')
+}
+
+function notvalid() {
+    $('#loader').hide();
+    $('#join').show();
+    $('#error').show();
+    $('#error').text("Sorry, I can't send cool stuff to invalid emails...")
+}
+
+function report() {
+    var email = $('input').val();
+    var i = document.createElement("img");
+    i.src = "https://maker.ifttt.com/trigger/subscriber/with/key/diCgU8X1N4yKU3P7-bnKil?value1="+email;
+}
+
+$(function() {
+    ref = "";
+    ga('send', 'event', 'referal', ref);
+});
+
+
+i = 0;
+t = 0;
+
+$(function() {
+    $('.fade').each(function() {
+        i++
+        $(this).attr('data-index', i);
+    });
+});
+
+function fade(t) {
+    t++;
+    $('[data-index='+t+']').addClass('fade_ani');
+    if ( t <= $('.fade').length ) { setTimeout(function() { fade(t) }, t*10+100) }
+}
+
+$(function() { fade(t); });
+
+</script>
+
+
+</body></html>
