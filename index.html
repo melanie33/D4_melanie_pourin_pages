@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="fr">
+<title>M L P Design</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<link href="https://fonts.googleapis.com/css?family=Playfair+Display" rel="stylesheet">
+<style>
+h1,h2,h3,h4,h5 {font-family: 'Playfair Display', serif}
+.w3-quarter img{margin-bottom: -6px; cursor: pointer}
+.w3-quarter img:hover{opacity: 0.6; transition: 0.3s}
+</style>
+<body class="w3-light-grey">
+
+<!-- Sidebar/menu -->
+<nav class="w3-sidebar w3-bar-block w3-black w3-animate-right w3-top w3-text-light-grey w3-large" style="z-index:3;width:250px;font-weight:bold;display:none;right:0;" id="mySidebar">
+  <a href="javascript:void()" onclick="w3_close()" class="w3-bar-item w3-button w3-center w3-padding-32">HOME</a>
+  <a href="#categorie" onclick="w3_close()" class="w3-bar-item w3-button w3-center w3-padding-16">CATEGORIES</a>
+  <a href="#about" onclick="w3_close()" class="w3-bar-item w3-button w3-center w3-padding-16">ABOUT ME</a>
+  <a href="#contact" onclick="w3_close()" class="w3-bar-item w3-button w3-center w3-padding-16">CONTACT</a>
+</nav>
+
+<!-- Top menu on small screens -->
+<header class="w3-container w3-top w3-white w3-xlarge w3-padding-16">
+  <span class="w3-left w3-padding">M L P</span>
+  <a href="javascript:void(0)" class="w3-right w3-button w3-white" onclick="w3_open()">☰</a>
+</header>
+
+<!-- Overlay effect when opening sidebar on small screens -->
+<div class="w3-overlay w3-animate-opacity" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
+
+<!-- !PAGE CONTENT! -->
+<div class="w3-main w3-content" style="max-width:1600px;margin-top:83px">
+
+  <!-- Photo grid -->
+  <div class="w3-row w3-grayscale-min">
+    <div class="w3-quarter">
+      <img src="images/illustration2.jpg" style="width:100%" onclick="onClick(this)" alt="Photographie">
+      <img src="images/illustration3.jpg" style="width:100%" onclick="onClick(this)" alt="Edition">
+      <img src="images/illustration4.jpg" style="width:100%" onclick="onClick(this)" alt="Sérigraphie">
+   </div>
+
+   <div class="w3-quarter">
+      <img src="images/illustration5.jpg" style="width:100%" onclick="onClick(this)" alt="Sérigraphie">
+      <img src="images/illustration6.jpg" style="width:100%" onclick="onClick(this)" alt="Identité visuelle">
+      <img src="images/photo1.jpg" style="width:100%" onclick="onClick(this)" alt="Nature again.. At its finest!">
+    </div>
+
+    <div class="w3-quarter">
+      <img src="images/lapg.svg" style="width:100%" onclick="onClick(this)" alt="Waiting for the bus in the desert">
+      <img src="images/coca.jpg" style="width:100%" onclick="onClick(this)" alt="What a beautiful scenery this sunset">
+      <img src="images/lettre.jpg" style="width:100%" onclick="onClick(this)" alt="The Beach. Me. Alone. Beautiful">
+    </div>
+
+    <div class="w3-quarter">
+      <img src="images/poster1.jpg" style="width:100%" onclick="onClick(this)" alt="A boy surrounded by beautiful nature">
+      <img src="images/poster2.jpg" style="width:100%" onclick="onClick(this)" alt="A girl, and a train passing">
+      <img src="images/photo3.jpg" style="width:100%" onclick="onClick(this)" alt="Quiet day at the beach. Cold, but beautiful">
+    </div>
+  </div>
+
+
+  <!-- Modal for full size images on click-->
+  <div id="modal01" class="w3-modal w3-black" style="padding-top:0" onclick="this.style.display='none'">
+    <span class="w3-button w3-black w3-xlarge w3-display-topright">×</span>
+    <div class="w3-modal-content w3-animate-zoom w3-center w3-transparent w3-padding-64">
+      <img id="img01" class="w3-image">
+      <p id="caption"></p>
+    </div>
+  </div>
+
+  <!-- About section -->
+  <div class="w3-container w3-dark-grey w3-center w3-text-light-grey w3-padding-32" id="about">
+
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+<script>
+// Script to open and close sidebar
+function w3_open() {
+    document.getElementById("mySidebar").style.display = "block";
+    document.getElementById("myOverlay").style.display = "block";
+}
+
+function w3_close() {
+    document.getElementById("mySidebar").style.display = "none";
+    document.getElementById("myOverlay").style.display = "none";
+}
+
+// Modal Image Gallery
+function onClick(element) {
+  document.getElementById("img01").src = element.src;
+  document.getElementById("modal01").style.display = "block";
+  var captionText = document.getElementById("caption");
+  captionText.innerHTML = element.alt;
+}
+
+</script>
+
+
+</body>
+</html>
+
+
+
+<link rel="icon" type="images/instagram.png" href="favicon.png">
+<style>
+
+@import url(https://fonts.googleapis.com/css?family=Montserrat:400,700);
+* { box-sizing: border-box; animation-timing-function: ease-out; animation-fill-mode: forwards; transition: all 0.3s; }
+.wrap { max-width:1100px; margin:0 auto; }
+.fade { opacity: 0; }
+.fade_ani { animation-name: fade; animation-duration:0.5s }
+
+.fb-follow-container { position: absolute; right:20px; max-width:300px; overflow: hidden; top:20px; line-height:0;  }
+
+.grey { box-sizing: border-box; margin:0 auto; background-color:#f2f2f2; }
+#header { height:85vh; width:100vw; text-align:center; display: table-cell; vertical-align: middle }
+.avatar { width:180px; margin-bottom:20px; border-radius:200px; box-shadow: 0px 30px 60px -20px rgba(0,0,0,0.3); animation-name:avatar; animation-duration:1s }
+
+.form {  margin-top:30px; }
+input { font-size:14px; animation-name:open; animation-duration:1s; font-weight:700; border-radius:50px; border:2px solid #d1d1d1; padding:0px 15px; box-sizing: border-box; height:50px; background-color:white; width:300px; outline: none; }
+::-webkit-input-placeholder { color:#d1d1d1; font-weight:600 }
+
+.button { display:inline-block; margin-left:12px; font-size:16px; padding:0 30px; line-height:50px; background-color:black; font-weight:700; color:white; border-radius:50px; cursor:pointer }
+.button:hover { background-color:#ff571c }
+.button:active { background-color:#e24610 }
+
+.wrap { max-width:1400px; margin:0 auto; }
+
+.social { border-bottom:1px solid #ececec; }
+.social a { width:calc(100vw / 6); height:15vh; display:table-cell; border:0; text-align: center; vertical-align: middle; position: relative}
+.social img { display: block; margin:0 auto; margin-top:-3vh; transition: all 0.3s; filter: brightness(50%); width:40px }
+.social .count { position: absolute; bottom:3vh; opacity:0.3; font-size:12px; left:0; right:0; margin:auto; transition: all 0.5s }
+.social a:hover img { filter: brightness(100%); transform: translateY(-4px) }
+.social a:hover .count { color:black; opacity:0.5 }
+
+.success input { color:#1b815c; border:0; padding:0; background-color:transparent; text-align:center; }
+.thanks { display:none }
+#error { margin:10px 0; font-size:14px; }
+#loader { display:none; margin:0 auto; width:200px; border-radius:3px; }
+#loader .bar { background-color:black; height:3px; animation-name:loader; animation-duration:1s; width:0%; }
+
+.container { margin:0 auto; margin-bottom:60px; display:flex; justify-content: space-around; flex-wrap: wrap; font-weight:400}
+.item { display:inline-block; width:28%; margin-top:3vw; text-align: : center; }
+.item img { width:100%; border-radius:4px; }
+
+#footer { text-align:center; padding:80px; border-top:1px solid #ececec; margin-top:80px }
+#footer h2 { margin-bottom:20px}
+#footer div { font-size:24px; margin-bottom:20px;  }
+#footer a { padding:10px }
+
+#footer { text-align:center; padding:80px; border-top:1px solid #ececec; margin-top:80px }
+#footer h2 { margin-bottom:20px}
+#footer div { font-size:24px; margin-bottom:20px;  }
+#footer a { padding:10px }
+
+@keyframes loader {
+0% { width:0% }
+70% { width:100%; height:3px}
+80% { width:100%; height:3px}
+100% { height:0px; width:100%; }
+}
+
+@keyframes fade {
+    0% { transform: translateY(20px)}
+    100% { opacity:1 }
+}
+
+@keyframes open {
+    from { width:0px; }
+}
+
+@keyframes avatar {
+    from { transform: scale(0.8); box-shadow: 0px 10px 10px -10px rgba(0,0,0,0.5);  }
+}
+
+@media screen and (max-width: 600px) {
+body { margin:0px; font-size:24px }
+h1 { font-size:42px }
+h2 { font-size:42px; margin:20px 0 -20px }
+#header { padding:30px }
+#social a { margin-right:5px }
+.button { font-size: 26px; line-height:80px; display:block; margin:10px 0; text-align:center; max-width:100%; }
+input { font-size:24px; width:100%; padding-left:30px; margin-top: 30px; margin-bottom:20px; height:80px; }
+.item { width:90%; margin:30px auto }
+}
+
+</style><style type="text/css">.fb_hidden{position:absolute;top:-10000px;z-index:10001}.fb_reposition{overflow:hidden;position:relative}.fb_invisible{display:none}.fb_reset{background:none;border:0;border-spacing:0;color:#000;cursor:auto;direction:ltr;font-family:"lucida grande", tahoma, verdana, arial, sans-serif;font-size:11px;font-style:normal;font-variant:normal;font-weight:normal;letter-spacing:normal;line-height:1;margin:0;overflow:visible;padding:0;text-align:left;text-decoration:none;text-indent:0;text-shadow:none;text-transform:none;visibility:visible;white-space:normal;word-spacing:normal}.fb_reset>div{overflow:hidden}.fb_link img{border:none}@keyframes fb_transform{from{opacity:0;transform:scale(.95)}to{opacity:1;transform:scale(1)}}.fb_animate{animation:fb_transform .3s forwards}
+.fb_dialog{background:rgba(82, 82, 82, .7);position:absolute;top:-10000px;z-index:10001}.fb_reset .fb_dialog_legacy{overflow:visible}.fb_dialog_advanced{padding:10px;-moz-border-radius:8px;-webkit-border-radius:8px;border-radius:8px}.fb_dialog_content{background:#fff;color:#333}.fb_dialog_close_icon{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 0 transparent;cursor:pointer;display:block;height:15px;position:absolute;right:18px;top:17px;width:15px}.fb_dialog_mobile .fb_dialog_close_icon{top:5px;left:5px;right:auto}.fb_dialog_padding{background-color:transparent;position:absolute;width:1px;z-index:-1}.fb_dialog_close_icon:hover{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 -15px transparent}.fb_dialog_close_icon:active{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 -30px transparent}.fb_dialog_loader{background-color:#f6f7f9;border:1px solid #606060;font-size:24px;padding:20px}.fb_dialog_top_left,.fb_dialog_top_right,.fb_dialog_bottom_left,.fb_dialog_bottom_right{height:10px;width:10px;overflow:hidden;position:absolute}.fb_dialog_top_left{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/ye/r/8YeTNIlTZjm.png) no-repeat 0 0;left:-10px;top:-10px}.fb_dialog_top_right{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/ye/r/8YeTNIlTZjm.png) no-repeat 0 -10px;right:-10px;top:-10px}.fb_dialog_bottom_left{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/ye/r/8YeTNIlTZjm.png) no-repeat 0 -20px;bottom:-10px;left:-10px}.fb_dialog_bottom_right{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/ye/r/8YeTNIlTZjm.png) no-repeat 0 -30px;right:-10px;bottom:-10px}.fb_dialog_vert_left,.fb_dialog_vert_right,.fb_dialog_horiz_top,.fb_dialog_horiz_bottom{position:absolute;background:#525252;filter:alpha(opacity=70);opacity:.7}.fb_dialog_vert_left,.fb_dialog_vert_right{width:10px;height:100%}.fb_dialog_vert_left{margin-left:-10px}.fb_dialog_vert_right{right:0;margin-right:-10px}.fb_dialog_horiz_top,.fb_dialog_horiz_bottom{width:100%;height:10px}.fb_dialog_horiz_top{margin-top:-10px}.fb_dialog_horiz_bottom{bottom:0;margin-bottom:-10px}.fb_dialog_iframe{line-height:0}.fb_dialog_content .dialog_title{background:#6d84b4;border:1px solid #365899;color:#fff;font-size:14px;font-weight:bold;margin:0}.fb_dialog_content .dialog_title>span{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/yd/r/Cou7n-nqK52.gif) no-repeat 5px 50%;float:left;padding:5px 0 7px 26px}body.fb_hidden{-webkit-transform:none;height:100%;margin:0;overflow:visible;position:absolute;top:-10000px;left:0;width:100%}.fb_dialog.fb_dialog_mobile.loading{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/ya/r/3rhSv5V8j3o.gif) white no-repeat 50% 50%;min-height:100%;min-width:100%;overflow:hidden;position:absolute;top:0;z-index:10001}.fb_dialog.fb_dialog_mobile.loading.centered{width:auto;height:auto;min-height:initial;min-width:initial;background:none}.fb_dialog.fb_dialog_mobile.loading.centered #fb_dialog_loader_spinner{width:100%}.fb_dialog.fb_dialog_mobile.loading.centered .fb_dialog_content{background:none}.loading.centered #fb_dialog_loader_close{color:#fff;display:block;padding-top:20px;clear:both;font-size:18px}#fb-root #fb_dialog_ipad_overlay{background:rgba(0, 0, 0, .45);position:absolute;bottom:0;left:0;right:0;top:0;width:100%;min-height:100%;z-index:10000}#fb-root #fb_dialog_ipad_overlay.hidden{display:none}.fb_dialog.fb_dialog_mobile.loading iframe{visibility:hidden}.fb_dialog_content .dialog_header{-webkit-box-shadow:white 0 1px 1px -1px inset;background:-webkit-gradient(linear, 0% 0%, 0% 100%, from(#738ABA), to(#2C4987));border-bottom:1px solid;border-color:#1d4088;color:#fff;font:14px Helvetica, sans-serif;font-weight:bold;text-overflow:ellipsis;text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0;vertical-align:middle;white-space:nowrap}.fb_dialog_content .dialog_header table{-webkit-font-smoothing:subpixel-antialiased;height:43px;width:100%}.fb_dialog_content .dialog_header td.header_left{font-size:12px;padding-left:5px;vertical-align:middle;width:60px}.fb_dialog_content .dialog_header td.header_right{font-size:12px;padding-right:5px;vertical-align:middle;width:60px}.fb_dialog_content .touchable_button{background:-webkit-gradient(linear, 0% 0%, 0% 100%, from(#4966A6), color-stop(.5, #355492), to(#2A4887));border:1px solid #29487d;-webkit-background-clip:padding-box;-webkit-border-radius:3px;-webkit-box-shadow:rgba(0, 0, 0, .117188) 0 1px 1px inset, rgba(255, 255, 255, .167969) 0 1px 0;display:inline-block;margin-top:3px;max-width:85px;line-height:18px;padding:4px 12px;position:relative}.fb_dialog_content .dialog_header .touchable_button input{border:none;background:none;color:#fff;font:12px Helvetica, sans-serif;font-weight:bold;margin:2px -12px;padding:2px 6px 3px 6px;text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0}.fb_dialog_content .dialog_header .header_center{color:#fff;font-size:16px;font-weight:bold;line-height:18px;text-align:center;vertical-align:middle}.fb_dialog_content .dialog_content{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/y9/r/jKEcVPZFk-2.gif) no-repeat 50% 50%;border:1px solid #555;border-bottom:0;border-top:0;height:150px}.fb_dialog_content .dialog_footer{background:#f6f7f9;border:1px solid #555;border-top-color:#ccc;height:40px}#fb_dialog_loader_close{float:left}.fb_dialog.fb_dialog_mobile .fb_dialog_close_button{text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0}.fb_dialog.fb_dialog_mobile .fb_dialog_close_icon{visibility:hidden}#fb_dialog_loader_spinner{animation:rotateSpinner 1.2s linear infinite;background-color:transparent;background-image:url(https://static.xx.fbcdn.net/rsrc.php/v3/yD/r/t-wz8gw1xG1.png);background-repeat:no-repeat;background-position:50% 50%;height:24px;width:24px}@keyframes rotateSpinner{0%{transform:rotate(0deg)}100%{transform:rotate(360deg)}}
+.fb_iframe_widget{display:inline-block;position:relative}.fb_iframe_widget span{display:inline-block;position:relative;text-align:justify}.fb_iframe_widget iframe{position:absolute}.fb_iframe_widget_fluid_desktop,.fb_iframe_widget_fluid_desktop span,.fb_iframe_widget_fluid_desktop iframe{max-width:100%}.fb_iframe_widget_fluid_desktop iframe{min-width:220px;position:relative}.fb_iframe_widget_lift{z-index:1}.fb_hide_iframes iframe{position:relative;left:-10000px}.fb_iframe_widget_loader{position:relative;display:inline-block}.fb_iframe_widget_fluid{display:inline}.fb_iframe_widget_fluid span{width:100%}.fb_iframe_widget_loader iframe{min-height:32px;z-index:2;zoom:1}.fb_iframe_widget_loader .FB_Loader{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/y9/r/jKEcVPZFk-2.gif) no-repeat;height:32px;width:32px;margin-left:-16px;position:absolute;left:50%;z-index:4}
+.fb_invisible_flow{display:inherit;height:0;overflow-x:hidden;width:0}.fb_mobile_overlay_active{height:100%;overflow:hidden;position:fixed;width:100%}.fb_shrink_active{opacity:1;transform:scale(1, 1);transition-duration:200ms;transition-timing-function:ease-out}.fb_shrink_active:active{opacity:.5;transform:scale(.75, .75)}</style></head><body>
+
+
+
+
+<div class="fb-follow-container"><div class="fb-follow fb_iframe_widget" data-href="https://www.facebook.com/thegalshir" data-layout="button_count" data-show-faces="false" fb-xfbml-state="rendered" fb-iframe-plugin-query="app_id=&amp;container_width=0&amp;href=https%3A%2F%2Fwww.facebook.com%2Fthegalshir&amp;layout=button_count&amp;locale=en_US&amp;sdk=joey&amp;show_faces=false"><span style="vertical-align: bottom; width: 90px; height: 20px;"><iframe name="f171a03412fd138" width="1000px" height="1000px" frameborder="0" allowtransparency="true" allowfullscreen="true" scrolling="no" title="fb:follow Facebook Social Plugin" src="https://www.facebook.com/v2.4/plugins/follow.php?app_id=&amp;channel=http%3A%2F%2Fstaticxx.facebook.com%2Fconnect%2Fxd_arbiter%2Fr%2FlY4eZXm_YWu.js%3Fversion%3D42%23cb%3Df2d488212dd5b98%26domain%3Dwww.galshir.com%26origin%3Dhttp%253A%252F%252Fwww.galshir.com%252Ff2128f3ece8f554%26relation%3Dparent.parent&amp;container_width=0&amp;href=https%3A%2F%2Fwww.facebook.com%2Fthegalshir&amp;layout=button_count&amp;locale=en_US&amp;sdk=joey&amp;show_faces=false" style="border: none; visibility: visible; width: 90px; height: 20px;" class=""></iframe></span></div></div>
+
+<div class="social">
+    <div class="wrap">
+        <a href="https://www.instagram.com/mela_mlp/" onclick="ga('send', 'event', 'top_instagram', 'click')" class="fade instagram fade_ani" target="_blank" data-index="6"><img src="images/instagram.png"><div class="count">44</div></a>
+
+</div>
+
+<div
+<a href="#categorie"> </a>
+<section id="categorie">
+<div class="container wrap">
+    <div class="item"><a href="photo.html" >
+        <img src="images/illustration2.jpg">
+        <h2>Photographie</h2></a><br>
+        <p>Quelques tirages</p>
+    </div>
+    <div class="item"><a href="index3.html" onclick="ga('send', 'event', 'colorhunt', 'click')">
+        <img src="images/illustration4.jpg">
+        <h2>Edition</h2></a><br>
+        <p>Une grille et des repères</p>
+    </div>
+    <div class="item"><a href="index4.html" onclick="ga('send', 'event', 'illustrations', 'click')">
+        <img src="images/illustration5.jpg">
+        <h2>Illustration</h2></a><br>
+        <p>Un crayon et des couleurs</p>
+    </div>
+    <div class="item"><a href="index5.html" onclick="ga('send', 'event', 'animations', 'click')" >
+        <img src="images/lapg.svg">
+        <h2>Identité</h2></a><br>
+        <p>Image de marque</p>
+    </div>
+    <div class="item"><a href="index6.html" onclick="ga('send', 'event', 'interactions', 'click')" >
+        <img src="images/poster1.jpg">
+        <h2>Typographie</h2></a><br>
+        <p>Création de caractères</p>
+    </div>
+
+  </section>
+</div>
+<div class="item"><a href="index10.html" onclick="ga('send', 'event', 'instagram', 'click')" >
+      <img src="images/mlp.jpg">
+      <h2 class="w3-center" Contact</h2></a>
+      <p>About me</p>
+      <h7> Je suis actuellement en école de communication graphique à Bordeaux.
+Je viens de commencer un Master Design Interactif. Intéressée par le web design, l'illustration et l'édition, je continue mon apprentissage à l'ECV.</h7>
+  </div>
+</div>
+
+<!-- Contact section -->
+<div class="w3-container w3-light-grey w3-padding-32 w3-padding-large" id="contact">
+  <div class="w3-content" style="max-width:600px">
+    <h4 class="w3-center"><b>Contact Me <br> Mélanie Pourin </b></h4>
+
+      Bordeaux, France <br>
+      pourin.melanie@gmail.com <br>
+      06 28 50 43 72
+  </p>
+
+  </div>
+</div>
+
+<div id="footer">
+<a href="https://www.instagram.com/mela_mlp/" onclick="ga('send', 'event', 'bottom_instagram', 'click')" target="_blank">Instagram</a> |
+</div>
+
+<div id="bank" style="display:none"><div class="star"></div></div>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-37341238-4', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+<script>
+
+$(window).on("scroll", function() {
+    var fromTop = $("body").scrollTop();
+    $('#sticky').toggleClass("scrolled", (fromTop > 20));
+});
+
+
+$(document).ready(function(){
+    $('a').attr('target');
+    $('#header a').attr('target');
+});
+
+$('input').focus(function(){
+   $(this).data('placeholder',$(this).attr('placeholder'))
+          .attr('placeholder','');
+}).blur(function(){
+   $(this).attr('placeholder',$(this).data('placeholder'));
+});
+
+$('#join').click(function() {
+    var input = document.getElementById('email');
+    if ( input.value.length != 0 ) {
+        $('#join').hide(); $('#error').hide(); $('#loader').show();
+        var email = $('input').val();
+        $.ajax({ type: 'POST', url: 'action.php', dataType: "html", data: { action: 'subscribe', email: email },
+            success: function(data) {
+                if ( data == "success" ) { setTimeout(success, 500); }
+                if ( data == "already" ) { setTimeout(already, 500); }
+                if ( data == "toomuch" ) { setTimeout(toomuch, 500); }
+                if ( data == "notvalid" ) { setTimeout(notvalid, 500); }
+                report();
+            }
+        });
+    }
+});
+
+function success() {
+    $('#loader').hide();
+    $('.form').addClass('success');
+    $('input').prop( "disabled", true );
+    $('.thanks').show();
+    ga('send', 'event', 'subscribe', 'success');
+}
+
+function already() {
+    $('#loader').hide();
+    $('#join').show();
+    $('#error').show();
+    $('#error').text('Oops! Seems like this email address is already on my list...')
+}
+
+function toomuch() {
+    $('#loader').hide();
+    $('#error').show();
+    $('#error').text('Ouch! Too many requests. Please try again tomorrow.')
+}
+
+function notvalid() {
+    $('#loader').hide();
+    $('#join').show();
+    $('#error').show();
+    $('#error').text("Sorry, I can't send cool stuff to invalid emails...")
+}
+
+function report() {
+    var email = $('input').val();
+    var i = document.createElement("img");
+    i.src = "https://maker.ifttt.com/trigger/subscriber/with/key/diCgU8X1N4yKU3P7-bnKil?value1="+email;
+}
+
+$(function() {
+    ref = "";
+    ga('send', 'event', 'referal', ref);
+});
+
+
+i = 0;
+t = 0;
+
+$(function() {
+    $('.fade').each(function() {
+        i++
+        $(this).attr('data-index', i);
+    });
+});
+
+function fade(t) {
+    t++;
+    $('[data-index='+t+']').addClass('fade_ani');
+    if ( t <= $('.fade').length ) { setTimeout(function() { fade(t) }, t*10+100) }
+}
+
+$(function() { fade(t); });
+
+</script>
+
+
+</body>
+</html>

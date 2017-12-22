@@ -1,0 +1,164 @@
+body, h1, h2, h3, h4, h5 {
+  font-family: 'Playfair Display', serif
+}
+
+body, html{
+  padding: 0;
+  margin: 0;
+}
+
+body{
+  overflow-x: hidden;
+  box-sizing: border-box
+}
+
+body input{
+position: absolute;
+display: none;
+}
+
+h1 {
+  text-align: center;
+}
+h7 {
+  display: flex;
+  flex-direction: column;
+  min-height: 5px;
+  padding: 5px;
+
+}
+
+h8 {
+  display: flex;
+  flex-direction: column;
+  min-height: 30px;
+  padding: 30px;
+}
+/* --- header --- */
+
+header input{
+}
+
+header{
+  width: 98vw;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px;
+  font-size: 24px;
+  position: fixed;
+  background: white;
+}
+
+header label{
+  padding: 5px;
+  cursor: pointer
+}
+
+header label:hover{
+  background: #ccc;
+  transition: all 0.5s;
+}
+
+/* --- Menu latéral --- */
+
+#mySidebar{
+  width: 200px;
+  background-color: black;
+  position: fixed;
+  right: -150vw;
+  top: 0vw;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  text-align: center;
+}
+
+#mySidebar label{
+  position: relative;
+  font-size: 25px;
+  margin: 0 10px;
+  text-align: left;
+}
+
+#mySidebar a, #mySidebar label{
+  color: white;
+  cursor: pointer
+}
+
+#mySidebar a{
+  font-weight: bold;
+  text-decoration: none;
+  vertical-align: center;
+}
+
+#mySidebar a:hover{
+color: black;
+background: #ccc;
+}
+
+#mySidebar .padding-32{
+  padding: 32px 16px;
+}
+
+#mySidebar .padding-16{
+  padding: 16px 16px;
+}
+
+input#menuon:checked~#mySidebar {
+right: 0;
+transition: all 0.1s;
+}
+
+input#menuoff:checked~#mySidebar {
+right: -150vw;
+transition: all 0.1s;
+}
+
+/* --- Grid --- */
+
+.container {
+  display: flex;
+  flex-direction: row;
+  margin: 0 auto;
+  padding-top: 112px;
+}
+
+
+.responsive-image {
+max-height: 100%;
+text-align: center;
+}
+
+.cell img, .cell2 img {
+  display: block;
+  width: auto;
+  height: 100%;
+      display:inline-block;
+      text-align: center;
+}
+
+@media screen and (min-width: 600px) {
+  .grid {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+  }
+  .cell, .cell2 {
+    width: 100%;
+  }
+}
+
+
+@media screen and (min-width: 1000px) {
+  .cell, .cell2 {
+    width: 25vw;
+  }
+  .cell{
+    height: 25vw;
+  }
+  .cell2{
+    height: 50vw;
+  }
+}
